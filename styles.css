@@ -1,3 +1,8 @@
+header{
+  text-align: center;
+  font-size: 50px;
+}
+
 .display{
   display: flex;
   gap: 15px;
@@ -6,6 +11,7 @@
 .operations{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .book-case{
@@ -17,16 +23,16 @@
 
 .book-card{
   display: flex;
-  background-color: lime;
   flex-direction: column;
   align-items: center;
   width: 150px;
   padding: 15px;
   border-radius: 15px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px 0 black;
 }
 
 .title, .author, .pages, .read, .submit{
-  color: #fff;
   font-size: 15px !important;
   height: 50px;
   border-radius: 15px;
@@ -41,7 +47,7 @@
 
 .input-form{
   transition: all 300ms ease-in;
-  color: #fff;
+  background: inherit;
   font-size: 25x;
   display: flex;
   align-items: center;
@@ -49,10 +55,10 @@
   gap: 5px;
   padding: 20px;
   border-radius: 15px;
+  border: solid black 1px;
+  box-shadow: 0px 0px 5px black;
   flex-wrap: wrap;
   flex-direction: column;
-  background: rgb(2,0,36);
-  background: linear-gradient(45deg,rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
 }
 
 .input-form.hidden{
@@ -96,13 +102,18 @@
 
 
 body{
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   overflow-y: scroll;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  background: #8E2DE2;  
+  background: -webkit-linear-gradient(#4A00E0, #8E2DE2);  
+  background: linear-gradient(#4A00E0, #8E2DE2); 
 }
 
 body, html{
   width: 100%;
+  height: 100%;
   margin: 0;
 }
