@@ -9,6 +9,7 @@ const heading = document.querySelector('header');
 
 // Global Variables
 let books = [];
+let length = 0;
 let showing = false;
 
 function Book(title, author, pages, read) {
@@ -20,6 +21,7 @@ function Book(title, author, pages, read) {
 
 function addBook(newBook) {
   books.push(newBook);
+  length += 1;
 }
 
 function displayBooks() {
@@ -46,13 +48,22 @@ function displayBooks() {
     cardPages.textContent = i.pages;
     insertBook.appendChild(cardPages);
 
+    let cardRead = document.createElement('button');
+    cardRead.classList.add('card-read');
+    cardRead.classList.add(i.read);
+    if (i.read === 'yes') {
+      cardRead.textContent = "Read";
+    } else {
+      cardRead.textContent = "Not Read";
+    }
+    insertBook.appendChild(cardRead);
     bookCase.appendChild(insertBook);
   }
   bookCase.appendChild(newBook);
 }
 
 
-function openPopUp(e) {
+function togglePopUp(e) {
   popUpDiv.classList.toggle('hidden');
   form.classList.toggle('hidden');
   if (showing === false) {
@@ -67,7 +78,24 @@ function openPopUp(e) {
 
 }
 
-function fetchValues(e) {
+
+function addListeners() {
+  let requiredChild = [...bookCase.children][length - 1];
+  let requiredButton = requiredChild.querySelector('.card-read');
+  requiredButton.addEventListener('click', (e) => {
+    if(e.target.classList.contains('yes')){
+      e.target.textContent = "Not Read";
+    } else{
+      e.target.textContent = "Read";
+    }
+    e.target.classList.toggle('yes');
+    e.target.classList.toggle('no');
+  })
+}
+
+// fetches values from fields, and also generates
+// the required listeners
+function useForm(e) {
   const title = form.elements['title'].value;
   const author = form.elements['author'].value;
   const pages = form.elements['pages'].value;
@@ -75,15 +103,16 @@ function fetchValues(e) {
   const newBook = new Book(title, author, pages, read);
   addBook(newBook);
   displayBooks();
-  openPopUp();
+  togglePopUp();
+  addListeners();
   e.preventDefault();
 }
 
-form.addEventListener('submit', fetchValues);
-newBook.addEventListener('click', openPopUp);
-closeButton.addEventListener('click', openPopUp);
+form.addEventListener('submit', useForm);
+newBook.addEventListener('click', togglePopUp);
+closeButton.addEventListener('click', togglePopUp);
 window.addEventListener('click', (e) => {
-  if(e.target.classList.contains('pop-up')){
-    openPopUp();
+  if (e.target.classList.contains('pop-up')) {
+    togglePopUp();
   }
 })

@@ -8,6 +8,7 @@ header{
   display: flex;
   padding: 15px;
   box-sizing: border-box;
+  justify-content: center;
   gap: 15px;
 }
 
@@ -21,7 +22,8 @@ header{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 100%;
+  justify-content: center;
+  width: 50%;
   gap: 15px;
 }
 
@@ -40,7 +42,23 @@ header{
   box-shadow: 0 0 5px 0 black;
 }
 
+.card-read.yes, .card-read.no{
+  transition: all 0.1s ease-out;
+  background-color: green;
+  border: solid black 1px;
+  color: inherit;
+  padding: 15px;
+  font-family: inherit;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.card-read.no{
+  background-color: rgb(253, 100, 100);
+}
+
 .new-book{
+  transition: all 0.1s ease-in;
   color: antiquewhite;
   background: none;
   width: 100px;
@@ -49,6 +67,11 @@ header{
   border: solid black 1px;
   box-shadow: 0 0 5px 0 black;
   font-size: 50px;
+}
+
+.new-book:hover, .book-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 0 antiquewhite;
 }
 
 .title, .author, .pages, .read, .submit{
@@ -66,6 +89,18 @@ header{
 
 .title:focus, .author:focus, .pages:focus, .read:focus, .submit:focus{
   outline: #fff;
+}
+
+.read:checked:after{
+  outline: none;
+  background-color: black;
+}
+
+.read-choice{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .input-form{
@@ -92,9 +127,6 @@ header{
 .form-heading{
   font-weight: 900;
   font-size: 35px;
-}
-.read-choice{
-  display: flex;
 }
 
 .close-form{
@@ -140,6 +172,8 @@ body{
   background: #8E2DE2;  
   background: -webkit-linear-gradient(#4A00E0, #8E2DE2);  
   background: linear-gradient(#4A00E0, #8E2DE2); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body, html{
