@@ -25,36 +25,78 @@
   border-radius: 15px;
 }
 
+.title, .author, .pages, .read, .submit{
+  color: #fff;
+  font-size: 15px !important;
+  height: 50px;
+  border-radius: 15px;
+  padding: 0 10px;
+  background: transparent;
+  border: solid 1px black;
+}
+
+.title:focus, .author:focus, .pages:focus, .read:focus, .submit:focus{
+  outline: #fff;
+}
+
 .input-form{
+  transition: all 300ms ease-in;
+  color: #fff;
+  font-size: 25x;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
-  padding: 15px;
+  padding: 20px;
   border-radius: 15px;
   flex-wrap: wrap;
   flex-direction: column;
-  background-color: aqua;
+  background: rgb(2,0,36);
+  background: linear-gradient(45deg,rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
 }
 
+.input-form.hidden{
+  display: none;
+}
 .read-choice{
   display: flex;
 }
 
+.close-form{
+  align-self: flex-end;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  height: 25px;
+}
+
+.cross-icon{
+  vertical-align: center;
+  height: auto;
+  width: 25px;
+}
+
 .pop-up{
+  transition: all 100ms ease-in;
   display: flex;
-  justify-content: center;
-  height: fit-content;
   position: fixed;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   width: 100%;
-  margin: auto;
   z-index: 9;
 }
 
 .pop-up.hidden{
-  display: none;
+  opacity: 0;
 }
 
+
 body{
+  overflow-y: scroll;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -62,6 +104,5 @@ body{
 
 body, html{
   width: 100%;
-  height: 100%;
   margin: 0;
 }
