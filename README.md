@@ -9,10 +9,10 @@
 This project was created to practice some OOP concepts in Javascript Language
 
 ## Technologies Used
- * [HTML]
- * [CSS3]
- * [Javascript]
- * [Flexbox]
+ * HTML
+ * CSS3
+ * Javascript
+ * Flexbox
 
 ## Status
 This project is currently in development
