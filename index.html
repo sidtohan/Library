@@ -12,16 +12,26 @@
 
 <body>
   <header>LIBRARY</header>
-  <div class="book-case">
-    <div class="pop-up">
+
+  <div class="display">
+    <div class="operations">
+      <button class="new-book" type="button">+</button>
+      <button class="remove-book" type="button">-</button>
+    </div>
+    <div class="book-case">
+
+    </div>
+    <div class="pop-up hidden">
       <form class="input-form">
         <h2>New Book</h2>
-        <input class="title" type="text" placeholder="Title">
-        <input class="author" type="text" placeholder="Author">
-        <input class="pages" type="number" placeholder="Pages">
-        <input class="read" name="read" type="radio" value="yes">
-        <input class="read" name="read" type="radio" value="no">
-        <input class="submit" type="submit" value="Add Book">
+        <input class="title" name="title" type="text" placeholder="Title" required>
+        <input class="author" name="author" type="text" placeholder="Author" required>
+        <input class="pages" name="pages" type="number" placeholder="Pages" required>
+        <div class="read-choice">
+          <input class="read" name="read" type="radio" value="yes" required>
+          <input class="read" name="read" type="radio" value="no" required>
+        </div>
+        <input class="submit" type="submit" value="Add Book" required>
       </form>
     </div>
   </div>

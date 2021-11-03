@@ -1,0 +1,67 @@
+.display{
+  display: flex;
+  gap: 15px;
+}
+
+.operations{
+  display: flex;
+  flex-direction: column;
+}
+
+.book-case{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 15px;
+}
+
+.book-card{
+  display: flex;
+  background-color: lime;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.input-form{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: aqua;
+}
+
+.read-choice{
+  display: flex;
+}
+
+.pop-up{
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  position: fixed;
+  width: 100%;
+  margin: auto;
+  z-index: 9;
+}
+
+.pop-up.hidden{
+  display: none;
+}
+
+body{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+body, html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
