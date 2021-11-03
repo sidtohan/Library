@@ -56,8 +56,8 @@ function openPopUp(e) {
   form.classList.toggle('hidden');
   if (showing === false) {
     showing = true;
-    display.setAttribute('style', "filter: blur(5px)");
-    heading.setAttribute('style', "filter: blur(5px)")
+    display.setAttribute('style', "filter: blur(10px)");
+    heading.setAttribute('style', "filter: blur(10px)")
   } else {
     display.removeAttribute('style');
     heading.removeAttribute('style');

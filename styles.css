@@ -1,6 +1,7 @@
 header{
   text-align: center;
   font-size: 50px;
+  font-weight: bold;
 }
 
 .display{
@@ -25,7 +26,10 @@ header{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 150px;
+  font-size: 25px;
+  height: 200px;
   padding: 15px;
   border-radius: 15px;
   border: 1px solid black;
@@ -33,7 +37,11 @@ header{
 }
 
 .title, .author, .pages, .read, .submit{
-  font-size: 15px !important;
+  width: 80%;
+  color: antiquewhite;
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px !important;
+  font-weight: 550;
   height: 50px;
   border-radius: 15px;
   padding: 0 10px;
@@ -48,7 +56,7 @@ header{
 .input-form{
   transition: all 300ms ease-in;
   background: inherit;
-  font-size: 25x;
+  width: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,10 +67,16 @@ header{
   box-shadow: 0px 0px 5px black;
   flex-wrap: wrap;
   flex-direction: column;
+  align-items: center;
 }
 
 .input-form.hidden{
   display: none;
+}
+
+.form-heading{
+  font-weight: 900;
+  font-size: 35px;
 }
 .read-choice{
   display: flex;
@@ -102,6 +116,7 @@ header{
 
 
 body{
+  color: antiquewhite;
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   overflow-y: scroll;
   box-sizing: border-box;
