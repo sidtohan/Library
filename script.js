@@ -48,6 +48,7 @@ function displayBooks() {
 
     bookCase.appendChild(insertBook);
   }
+  bookCase.appendChild(newBook);
 }
 
 

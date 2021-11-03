@@ -6,6 +6,8 @@ header{
 
 .display{
   display: flex;
+  padding: 15px;
+  box-sizing: border-box;
   gap: 15px;
 }
 
@@ -18,11 +20,13 @@ header{
 .book-case{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   width: 100%;
   gap: 15px;
 }
 
 .book-card{
+  transition: all 0.1s ease-in;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,6 +38,17 @@ header{
   border-radius: 15px;
   border: 1px solid black;
   box-shadow: 0 0 5px 0 black;
+}
+
+.new-book{
+  color: antiquewhite;
+  background: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: solid black 1px;
+  box-shadow: 0 0 5px 0 black;
+  font-size: 50px;
 }
 
 .title, .author, .pages, .read, .submit{
