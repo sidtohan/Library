@@ -33,10 +33,11 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 150px;
+  width: 200px;
+  height: 300px;
   font-size: 25px;
-  height: 200px;
   padding: 15px;
+  gap: 15px;
   border-radius: 15px;
   border: 1px solid black;
   box-shadow: 0 0 5px 0 black;
@@ -55,6 +56,16 @@ header{
 
 .card-read.no{
   background-color: rgb(253, 100, 100);
+}
+
+.delete-card{
+  background-color: red;
+  color: antiquewhite;
+  padding: 15px;
+  font-family: inherit;
+  border: solid 1px black;
+  border-radius: 15px;
+  font-size: 20px;
 }
 
 .new-book{

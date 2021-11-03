@@ -29,6 +29,7 @@ function displayBooks() {
   bookCase.innerHTML = '';
   // clearing any previous outputs
 
+  let counter = 0;
   for (const i of books) {
     let insertBook = document.createElement('div');
     insertBook.classList.add('book-card')
@@ -57,11 +58,19 @@ function displayBooks() {
       cardRead.textContent = "Not Read";
     }
     insertBook.appendChild(cardRead);
+
+    let deleteCard = document.createElement('button');
+    deleteCard.classList.add('delete-card');
+    deleteCard.textContent = "Delete";
+    insertBook.appendChild(deleteCard);
+
+    addListenersDisplay(insertBook);
+    
+    insertBook.setAttribute('data-index', counter++);
     bookCase.appendChild(insertBook);
   }
   bookCase.appendChild(newBook);
 }
-
 
 function togglePopUp(e) {
   popUpDiv.classList.toggle('hidden');
@@ -78,11 +87,10 @@ function togglePopUp(e) {
 
 }
 
-
-function addListeners() {
-  let requiredChild = [...bookCase.children][length - 1];
-  let requiredButton = requiredChild.querySelector('.card-read');
-  requiredButton.addEventListener('click', (e) => {
+function addListenersDisplay(insertBook) {
+  const cardRead = insertBook.querySelector('.card-read');
+  const deleteCard = insertBook.querySelector('.delete-card');
+  cardRead.addEventListener('click', (e) => {
     if(e.target.classList.contains('yes')){
       e.target.textContent = "Not Read";
     } else{
@@ -91,6 +99,11 @@ function addListeners() {
     e.target.classList.toggle('yes');
     e.target.classList.toggle('no');
   })
+
+  deleteCard.addEventListener('click', e => {
+    books.pop(insertBook.getAttribute("data-index"));
+    bookCase.removeChild(insertBook);
+  });
 }
 
 // fetches values from fields, and also generates
@@ -104,7 +117,6 @@ function useForm(e) {
   addBook(newBook);
   displayBooks();
   togglePopUp();
-  addListeners();
   e.preventDefault();
 }
 
