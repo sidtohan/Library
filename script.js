@@ -150,18 +150,17 @@ function useForm(e) {
   e.preventDefault();
 }
 
+// detects if the background has any clicks
+// while the popup is active
+function detectBackgroundClicks(e){
+  if (e.target.classList.contains('overlay') || e.target.classList.contains('pop-up')){
+    togglePopUp();
+  }
+}
+
 // INITIALIZERS
 form.addEventListener('submit', useForm);
 newBook.addEventListener('click', togglePopUp);
 closeButton.addEventListener('click', togglePopUp);
-window.addEventListener('click', (e) => {
-  if (e.target.classList.contains('pop-up')) {
-    togglePopUp();
-  }
-})
-window.addEventListener('touchstart', (e) => {
-  if (e.target.classList.contains('pop-up')) {
-    togglePopUp();
-  }
-})
+window.addEventListener('click', detectBackgroundClicks);
 fetchBooksLocal();

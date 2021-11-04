@@ -180,7 +180,7 @@ header{
 
 .close-form{
   align-self: flex-end;
-  background-color: white;
+  background-color: inherit;
   border-radius: 50%;
   border: none;
   margin: 0;
