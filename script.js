@@ -64,9 +64,9 @@ function displayBooks() {
     deleteCard.textContent = "Delete";
     insertBook.appendChild(deleteCard);
 
-    addListenersDisplay(insertBook);
-    
     insertBook.setAttribute('data-index', counter++);
+
+    addListenersDisplay(insertBook);
     bookCase.appendChild(insertBook);
   }
   bookCase.appendChild(newBook);
@@ -91,10 +91,13 @@ function addListenersDisplay(insertBook) {
   const cardRead = insertBook.querySelector('.card-read');
   const deleteCard = insertBook.querySelector('.delete-card');
   cardRead.addEventListener('click', (e) => {
+    const index = Number(e.target.getAttribute('data-index'));
     if(e.target.classList.contains('yes')){
       e.target.textContent = "Not Read";
+      books[index].read = "no";
     } else{
       e.target.textContent = "Read";
+      books[index].read = "yes";
     }
     e.target.classList.toggle('yes');
     e.target.classList.toggle('no');

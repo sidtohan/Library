@@ -86,8 +86,7 @@ header{
 
 .new-book{
   transition: all 0.1s ease-in;
-  color: antiquewhite;
-  background: none;
+  background: antiquewhite;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -98,7 +97,7 @@ header{
 
 .new-book:hover, .book-card:hover{
   transform: scale(1.05);
-  box-shadow: 0 0 10px 0 antiquewhite;
+  box-shadow: 0 0 10px 0 black;
 }
 
 .title, .author, .pages, .read, .submit{
