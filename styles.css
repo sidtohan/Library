@@ -28,6 +28,9 @@ header{
 }
 
 .book-card{
+  font-weight: bold;
+  background-color: antiquewhite;
+  color: black;
   transition: all 0.1s ease-in;
   display: flex;
   flex-direction: column;
@@ -35,19 +38,32 @@ header{
   justify-content: center;
   width: 200px;
   font-size: 25px;
-  padding: 15px;
-  gap: 15px;
+  gap: 10px;
+  padding-bottom: 10px;
   border-radius: 15px;
-  border: 1px solid black;
   box-shadow: 0 0 5px 0 black;
+  box-sizing: border-box;
+}
+
+.book-card > .card-title{
+  z-index: 4;
+  width: 100%;
+  background-color: black;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  padding: 10px 0;
+  color: antiquewhite;
+  text-align: center;
+  font-weight: bold;
 }
 
 .card-read.yes, .card-read.no{
   transition: all 0.1s ease-out;
   background-color: green;
   border: solid black 1px;
-  color: inherit;
-  padding: 15px;
+  color: antiquewhite;
+  font-weight: bold;
+  padding: 8px;
   font-family: inherit;
   border-radius: 10px;
   font-size: 20px;
@@ -60,7 +76,8 @@ header{
 .delete-card{
   background-color: red;
   color: antiquewhite;
-  padding: 15px;
+  font-weight: bold;
+  padding: 10px;
   font-family: inherit;
   border: solid 1px black;
   border-radius: 15px;
