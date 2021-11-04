@@ -195,7 +195,7 @@ header{
 }
 
 .pop-up{
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-in-out;
   display: flex;
   position: fixed;
   justify-content: center;
@@ -210,7 +210,7 @@ header{
 
 .pop-up.hidden{
   transform: translate(-50%,-50%) scale(0);
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
