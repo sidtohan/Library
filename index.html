@@ -9,27 +9,29 @@
   <link href="styles.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
   <title>Library</title>
 </head>
 
 <body>
   <header>LIBRARY</header>
-  <div class="pop-up hidden">
-    <form class="input-form hidden">
-      <button type="button" class="close-form">
-        <img class="cross-icon" src="assets/cross-symbol.png">
-      </button>
-      <h2 class="form-heading">New Book</h2>
-      <input class="title" name="title" type="text" placeholder="Title" required>
-      <input class="author" name="author" type="text" placeholder="Author" required>
-      <input class="pages" name="pages" type="number" placeholder="Pages" required>
-      <div class="read-choice">
-        <input class="read" name="read" type="radio" value="yes" required> Read
-        <input class="read" name="read" type="radio" value="no" required> Not Read
-      </div>
-      <input class="submit" type="submit" value="Add Book" required>
-    </form>
+  <div class="overlay hidden">
+    <div class="pop-up hidden">
+      <form class="input-form hidden">
+        <button type="button" class="close-form">
+          <img class="cross-icon" src="assets/cross-symbol.png">
+        </button>
+        <h2 class="form-heading">New Book</h2>
+        <input class="title" name="title" type="text" placeholder="Title" required>
+        <input class="author" name="author" type="text" placeholder="Author" required>
+        <input class="pages" name="pages" type="number" placeholder="Pages" required>
+        <div class="read-choice">
+          <input class="read" name="read" type="radio" value="yes" required> Read
+          <input class="read" name="read" type="radio" value="no" required> Not Read
+        </div>
+        <input class="submit" type="submit" value="Add Book" required>
+      </form>
+    </div>
   </div>
   <div class="display">
     <div class="book-case">

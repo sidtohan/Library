@@ -6,6 +6,7 @@ const popUpDiv = document.querySelector('.pop-up');
 const closeButton = document.querySelector('.close-form');
 const display = document.querySelector('.display');
 const heading = document.querySelector('header');
+const overlay = document.querySelector('.overlay');
 
 // Global Variables
 let books = [];
@@ -89,13 +90,10 @@ function displayBooks() {
 // function for toggling the pop up form div
 function togglePopUp(e) {
   popUpDiv.classList.toggle('hidden');
+  overlay.classList.toggle('hidden');
   if (showing === false) {
-    display.setAttribute('style', "filter: blur(10px)");
-    heading.setAttribute('style', "filter: blur(10px)");
     showing = true;
   } else {
-    display.removeAttribute('style');
-    heading.removeAttribute('style');
     showing = false;
   }
 
@@ -148,6 +146,7 @@ function useForm(e) {
   displayBooks();
   togglePopUp();
   updateLocalStorage();
+  form.reset();
   e.preventDefault();
 }
 
@@ -161,4 +160,3 @@ window.addEventListener('click', (e) => {
   }
 })
 fetchBooksLocal();
-

@@ -134,6 +134,24 @@ header{
   justify-content: space-between;
 }
 
+.overlay{
+  z-index: 9;
+  position: fixed;
+  width: 100% !important;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: block;
+  opacity: 1;
+}
+
+.overlay.hidden{
+  opacity: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .input-form{
   transition: all 50ms ease;
   background: inherit;
