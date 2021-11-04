@@ -159,4 +159,9 @@ window.addEventListener('click', (e) => {
     togglePopUp();
   }
 })
+window.addEventListener('touchstart', (e) => {
+  if (e.target.classList.contains('pop-up')) {
+    togglePopUp();
+  }
+})
 fetchBooksLocal();

@@ -140,29 +140,17 @@ header{
   width: 100% !important;
   height: 100%;
   background-color: rgba(0,0,0,0.5);
-  display: block;
   opacity: 1;
 }
 
 .overlay.hidden{
-  animation: overlay-closing 150ms ease-in-out forwards;
+  transition: all 500ms ease-in-out;
+  opacity: 0;
+  background: none;
+  pointer-events: none;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-}
-
-@keyframes overlay-closing {
-  0%{
-    opacity: 1;
-  }
-  50%{
-    opacity: 0.5;
-  }
-  100%{
-    opacity: 0;
-    display: none;
-    visibility: hidden;
-  }
 }
 
 .input-form{
@@ -207,53 +195,26 @@ header{
 }
 
 .pop-up{
+  transition: all 300ms ease-in-out;
   display: flex;
   position: fixed;
   justify-content: center;
-  transform: translate(-50%,-50%);
   top: 50%;
   left: 50%;
   width: 80%;
   z-index: 9;
+  transform: translate(-50%,-50%) scale(1);
   visibility: visible;
-  animation: grow-form 150ms ease-in-out forwards;
+  opacity: 1;
 }
 
 .pop-up.hidden{
   transform: translate(-50%,-50%) scale(0);
-  animation: collapse-form 150ms forwards;
+  transition: all 300ms ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
 
-@keyframes grow-form{
-  0%{
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
-  }
-  50%{
-    opacity: 0.5;
-    translate: translate(-50%,-50%) scale(0.5);
-  }
-  100%{
-    opacity: 1;
-    transition: translate(-50%, -50%) scale(1);
-  }
-}
-
-@keyframes collapse-form{
-  0%{
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50%{
-    opacity: 0.5;
-    translate: translate(-50%,-50%) scale(0.5);
-  }
-  100%{
-    opacity: 0;
-    transition: translate(-50%, -50%) scale(0);
-    visibility: hidden;
-  }
-}
 
 body{
   color: antiquewhite;
