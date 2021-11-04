@@ -185,13 +185,13 @@ header{
   border: none;
   margin: 0;
   padding: 0;
-  height: 25px;
+  height: 40px;
 }
 
 .cross-icon{
   vertical-align: center;
   height: auto;
-  width: 25px;
+  width: 40px;
 }
 
 .pop-up{
@@ -223,6 +223,7 @@ body{
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background: #8E2DE2;  
   background: -webkit-linear-gradient(#4A00E0, #8E2DE2);  
   background: linear-gradient(#4A00E0, #8E2DE2); 
@@ -234,4 +235,24 @@ body, html{
   width: 100%;
   height: 100%;
   margin: 0;
+}
+
+footer{
+  display: flex;
+  padding-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.github-logo{
+  vertical-align: middle;
+  width: auto;
+}
+
+.github-logo:hover{
+  box-shadow: 0 0 5px 0 antiquewhite;
+  border-radius: 50%;
 }
