@@ -12,6 +12,20 @@ let books = [];
 let length = 0;
 let showing = false;
 
+// logic for gettting books from localStorage
+function fetchBooksLocal() {
+  while (true) {
+    let book = localStorage.getItem(`${length}`);
+    if (book === null) {
+      break;
+    }
+    books.push(JSON.parse(book));
+    length += 1;
+  }
+  displayBooks();
+}
+
+// constructor for the book object
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -72,13 +86,13 @@ function displayBooks() {
   bookCase.appendChild(newBook);
 }
 
+// function for toggling the pop up form div
 function togglePopUp(e) {
   popUpDiv.classList.toggle('hidden');
-  form.classList.toggle('hidden');
   if (showing === false) {
-    showing = true;
     display.setAttribute('style', "filter: blur(10px)");
-    heading.setAttribute('style', "filter: blur(10px)")
+    heading.setAttribute('style', "filter: blur(10px)");
+    showing = true;
   } else {
     display.removeAttribute('style');
     heading.removeAttribute('style');
@@ -87,25 +101,38 @@ function togglePopUp(e) {
 
 }
 
+// function for updating local storage whenever a change is made
+function updateLocalStorage() {
+  localStorage.clear();
+  for (let i = 0; i < length; i++) {
+    localStorage.setItem(i, JSON.stringify(books[i]));
+  }
+}
+
+// function to add the listeners -> card read button and 
+// delete book card button
 function addListenersDisplay(insertBook) {
   const cardRead = insertBook.querySelector('.card-read');
   const deleteCard = insertBook.querySelector('.delete-card');
-  cardRead.addEventListener('click', (e) => {
-    const index = Number(e.target.getAttribute('data-index'));
-    if(e.target.classList.contains('yes')){
+  cardRead.addEventListener('click', (e) => {  
+    const index = Number(insertBook.getAttribute('data-index'));
+    if (e.target.classList.contains('yes')) {
       e.target.textContent = "Not Read";
       books[index].read = "no";
-    } else{
+    } else {
       e.target.textContent = "Read";
       books[index].read = "yes";
     }
+    updateLocalStorage();
     e.target.classList.toggle('yes');
     e.target.classList.toggle('no');
   })
 
   deleteCard.addEventListener('click', e => {
-    books.pop(insertBook.getAttribute("data-index"));
+    books.splice(insertBook.getAttribute("data-index"),1);
+    length -= 1;
     bookCase.removeChild(insertBook);
+    updateLocalStorage();
   });
 }
 
@@ -116,13 +143,15 @@ function useForm(e) {
   const author = form.elements['author'].value;
   const pages = form.elements['pages'].value;
   const read = form.elements['read'].value;
-  const newBook = new Book(title, author, pages, read);
-  addBook(newBook);
+  const insertBook = new Book(title, author, pages, read);
+  addBook(insertBook);
   displayBooks();
   togglePopUp();
+  updateLocalStorage();
   e.preventDefault();
 }
 
+// INITIALIZERS
 form.addEventListener('submit', useForm);
 newBook.addEventListener('click', togglePopUp);
 closeButton.addEventListener('click', togglePopUp);
@@ -131,3 +160,5 @@ window.addEventListener('click', (e) => {
     togglePopUp();
   }
 })
+fetchBooksLocal();
+

@@ -31,12 +31,13 @@ header{
   font-weight: bold;
   background-color: antiquewhite;
   color: black;
-  transition: all 0.1s ease-in;
+  transition: all 50ms ease;
   display: flex;
   flex-direction: column;
+  min-width: 200px;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  height: fit-content;
   font-size: 25px;
   gap: 10px;
   padding-bottom: 10px;
@@ -46,12 +47,15 @@ header{
 }
 
 .book-card > .card-title{
+  box-sizing: border-box;
+  word-wrap: break-word;
   z-index: 4;
   width: 100%;
+  height: fit-content;
   background-color: black;
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
-  padding: 10px 0;
+  padding: 10px 10px;
   color: antiquewhite;
   text-align: center;
   font-weight: bold;
@@ -85,8 +89,9 @@ header{
 }
 
 .new-book{
-  transition: all 0.1s ease-in;
+  transition: all 50ms ease;
   background: antiquewhite;
+  color: #4A00E0;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -130,7 +135,7 @@ header{
 }
 
 .input-form{
-  transition: all 300ms ease-in;
+  transition: all 50ms ease;
   background: inherit;
   width: 300px;
   display: flex;
@@ -141,14 +146,13 @@ header{
   border-radius: 15px;
   border: solid black 1px;
   box-shadow: 0px 0px 5px black;
+  background: -webkit-linear-gradient(#4A00E0, #8E2DE2);  
+  background: linear-gradient(#4A00E0, #8E2DE2); 
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 }
 
-.input-form.hidden{
-  display: none;
-}
 
 .form-heading{
   font-weight: 900;
@@ -172,18 +176,21 @@ header{
 }
 
 .pop-up{
-  transition: all 100ms ease-in;
+  transition: opacity 300ms;
+  transform: translate(-50%,-50%);
   display: flex;
   position: fixed;
   justify-content: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  width: 100%;
+  width: 80%;
   z-index: 9;
+  opacity: 1;
 }
 
 .pop-up.hidden{
+  transition: opacity 1s;
+  visibility: hidden;
   opacity: 0;
 }
 
