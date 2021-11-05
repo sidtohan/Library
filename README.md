@@ -15,4 +15,4 @@ This project was created to practice some OOP concepts in Javascript Language
  * Flexbox
 
 ## Status
-This project is currently in development
+This project has finished development
