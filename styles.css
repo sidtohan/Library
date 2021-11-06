@@ -248,8 +248,15 @@ footer{
 }
 
 .github-logo{
+  display: block;
+  width: 25px;
+  height: auto;
+}
+
+.copyright-symbol{
   vertical-align: middle;
-  width: auto;
+  width: 18px;
+  height: auto;
 }
 
 .github-logo:hover{
